@@ -29,20 +29,20 @@ public class ProductCatalog extends Abstractcomponents {
 	}
 
 	public void addItems() throws IOException {
-		//String[] itemsNeeded = { "ZARA COAT 3", "ADIDAS ORIGINAL", "IPHONE 13 PRO" };
+		// String[] itemsNeeded = { "ZARA COAT 3", "ADIDAS ORIGINAL", "IPHONE 13 PRO" };
 
 		Properties pro = new Properties();
 		FileInputStream files = new FileInputStream(
 				"C:\\Users\\n.yogeswari\\eclipse-workspace\\Google\\src\\PropertyFile\\Assignment.properties");
 		pro.load(files);
-		String[] itemsNeeded=pro.getProperty("products").toString().split("@");
+		String[] itemsNeeded = pro.getProperty("products").toString().split("@");
 		String formattedname = itemsNeeded[0].trim();
 		if (formattedname.length() == 0) {
 			System.out.println(" total no .of products in the property file " + formattedname.length());
 
 			System.out.println("No products in the property file");
 			System.exit(0);
-			//driver.close();
+			// driver.close();
 		}
 
 		else if (formattedname.length() > 0) {
@@ -59,8 +59,8 @@ public class ProductCatalog extends Abstractcomponents {
 				String formattedName = name[0].trim();
 				List itemsNeedlist = Arrays.asList(itemsNeeded);
 				if (itemsNeedlist.contains(formattedName)) {
-					
-					System.out.println(formattedName+"Product is added successfully");
+
+					System.out.println(formattedName + "Product is added successfully");
 
 					j++;
 
@@ -69,16 +69,9 @@ public class ProductCatalog extends Abstractcomponents {
 					wait.until(ExpectedConditions
 							.invisibilityOfAllElements(driver.findElements(By.cssSelector(".ng-animating"))));
 
-					if (j == itemsNeeded.length) {
-					//	System.out.println(" ZARA COAT 3 is added successfully");
-						//System.out.println(" ADIDAS ORIGINAL is added successfully");
-						//System.out.println(" IPHONE 13 PRO is added successfully");
-						break;
-
-					}
 				}
 			}
 		}
-		
+
 	}
 }
