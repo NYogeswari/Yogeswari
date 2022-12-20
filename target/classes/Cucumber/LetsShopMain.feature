@@ -1,4 +1,3 @@
-
 @tag
 Feature: purchase the order from the website
   I want to use this template for my feature file
