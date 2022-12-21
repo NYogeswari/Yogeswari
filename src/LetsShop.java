@@ -30,7 +30,7 @@ public class LetsShop {
 		addItems(driver, itemsNeeded);
 		driver.findElement(By.cssSelector("button[routerlink='/dashboard/cart']")).click();
 		
-		 WebElement ele=driver.findElement(By.xpath("//button[text()='Checkout']"));
+		// WebElement ele=driver.findElement(By.xpath("//button[text()='Checkout']"));
 		 Thread.sleep(5000);
 		 
 		
@@ -46,10 +46,10 @@ public class LetsShop {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//button[text()='Checkout']")).click();
 
-		/*Boolean bool = driver.findElement(By.xpath("//button[text()='Checkout']")).isEnabled();
+		Boolean bool = driver.findElement(By.xpath("//button[text()='Checkout']")).isEnabled();
 		if (bool == true) {
 			driver.findElement(By.xpath("//button[text()='Checkout']")).click();
-		}*/
+		}
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
 			//	 driver.findElement(By.xpath("//input[@placeholder=\"Select Country\"]"));
@@ -76,6 +76,8 @@ public class LetsShop {
 			String formattedName = name[0].trim();
 			List itemsNeedlist = Arrays.asList(itemsNeeded);
 			if (itemsNeedlist.contains(formattedName)) {
+				//System.out.println(" product is added successfully");
+
 				j++;
 				driver.findElements(By.xpath("//section[@id='products']//button[2]")).get(i).click();
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#toast-container")));
