@@ -50,7 +50,7 @@ public class Login {
 			  driver.get("https://rahulshettyacademy.com/client/");
 			  System.out.println(" Hi! Welcome To Login Page");
 
-			  System.out.println(" Login successfully");
+			  System.out.println(" Login is successfully");
 
 	       }
 			
